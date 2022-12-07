@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Menu top</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --colorstrong: #e0e0e0;
+        --graymeio: #EEEEEE;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: var(--graymeio);
+        min-width: 532px;
+    }
+
+    .topnav {
+        width: 100%;
+        display: flex;
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        justify-content: space-between;
+        color: gray;
+        align-items: center;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background: white;
+        border-bottom: 2px solid rgba(165, 164, 164, 0.268);
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        height: 50px;
+
+
+    }
+
+    .topcontener {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        /* border: 5px solid black; */
+
+
+    }
+
+    .menubtn {
+        padding: 0 15px 0 10px;
+        margin: 10px;
+        color: white;
+        /* font-size: 20px; */
+
+
+    }
+
+    .topcontener div {
+        padding: 0 15px 0 10px;
+        font-size: 15px;
+        /* border: 5px solid red; */
+
+
+    }
+
+    .avatar {
+        border-radius: 10px;
+        padding: 10px;
+        background-color: black;
+
+
+    }
+
+    .corpo {
+
+        display: flex;
+ 
+    }
+
+    .menu {
+
+        width: 150px;
+        background-color: white;
+        margin-left: 0;
+        margin-right: 0;
+        margin-left: 0;
+        border-right: 2px solid rgba(165, 164, 164, 0.268);
+    }
+
+
+    .menu-contener {
+
+        display: block;
+        text-align: center;
+        margin: 0;
+        background-color: white;
+        color: gray;
+
+    }
+
+    .menu-contener ul {
+        padding-left: 1rem;
+    }
+
+    .menu-contener li {
+        display: flex;
+        list-style: none;
+        color: gray;
+        align-items: center;
+        margin: 2px;
+        border: 1px solid rgb(165, 164, 164, 0);
+        margin-inline: 10px;
+    }
+
+    .menu-contener i {
+
+        padding-left: 1rem;
+    }
+
+    .menu-contener a {
+
+        display:flex;
+        padding: 1rem 0;
+        align-items: center;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        font-weight: 700;
+        text-decoration: none;
+        color: gray;
+
+
+
+
+
+
+    }
+
+    .menu-contener span {
+        padding: 10px;
+
+
+    }
+
+
+    .menu-contener li:hover {
+
+        background-color: var(--graymeio);
+        /* border-top-left-radius: 0.5rem; */
+        /* border-bottom-left-radius: 0.5rem; */
+        border-radius: 8px;
+        color: black;
+        /* margin-right: 1rem; */
+        /* border: 1px solid rgba(165, 164, 164, 0.268);  */
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        font-weight: 700;
+        /* margin: 0; */
+
+
+
+
+    }
+
+    .menu-contener li:hover a {
+        color: black;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 16px;
+        font-weight: 700;
+        margin: 0;
+
+
+    }
+
+
+    /* .menu-contener i {
+        color:#8cb3d1;
+
+      
+    } */
+
+    .menu-contener li.active {
+        background-color: var(--graymeio);
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+        /* border-right: 2px solid black; */
+        color: black;
+        /* border-bottom-left-radius: 15px; */
+        border-bottom: 1px solid rgba(165, 164, 164, 0.268);
+        border-top: 1px solid rgba(165, 164, 164, 0.268);
+        border-left: 1px solid rgba(165, 164, 164, 0.268);
+        margin-right: 0px;
+
+        box-shadow: 5px 0 var(--graymeio);
+
+
+    }
+
+    .menu-contener li.active:hover {
+
+        margin-right: 0;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+
+
+    }
+
+    .meio {
+
+        flex: 85%;
+        background-color: var(--graymeio);
+        padding: 20px;
+        min-height: 100%;
+        /* margin: 5px;
+        margin-left: 5px;
+        border-radius: 5px; */
+        height: calc(100vh - 50px);
+        /* border: 2px solid rgba(165, 164, 164, 0.268); */
+
+
+    }
+
+
+
+    .btmenu {
+        color: #f1f1f1;
+        font-size: 35px;
+        font-weight: 800;
+
+    }
+
+    .header_left {
+        /* border: 5px solid black;  */
+        display: flex;
+        align-items: center;
+        padding-top: 0;
+        padding-right: 10px;
+        padding-left: 10px;
+    }
+
+    .header_rigth {
+        /* border: 5px solid black;  */
+        display: flex;
+        align-items: center;
+
+    }
+
+    .menu_header {
+        padding-left: 10px;
+        padding-right: 10px;
+        cursor: pointer;
+        font-weight: 400;
+
+
+    }
+
+    .header_left>p {
+        font-size: 24px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 0;
+        cursor: pointer;
+
+
+    }
+
+    .header_left>p:hover {
+        color: black;
+
+    }
+
+    .header_left>i {
+        padding-left: 10px;
+
+    }
+
+    .header_left h3 {
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        color: #8cb3d1;
+        font-weight: 200;
+        font-size: 25;
+        margin: 0 10px 0 10px;
+
+
+    }
+
+    .menu__header {
+
+        display: flex;
+        align-items: center;
+        padding: 10px;
+
+        color: #8cb3d1;
+        background-color: white;
+        /* border-bottom: 2px solid rgba(165, 164, 164, 0.268); */
+
+    }
+
+    .menu__header>i {
+
+        font-size: 16px;
+
+
+    }
+
+    .menu__header>h5 {
+        padding: 5px;
+        font-size: 15px;
+
+
+    }
+
+
+    .menuHamb {
+
+        border-top: 0.125rem solid;
+        width: 1.25rem;
+        display: block;
+    }
+
+    .menuHamb::before,
+    .menuHamb::after {
+        content: " ";
+        display: block;
+        width: 1.25rem;
+        height: 0.125rem;
+        background: currentColor;
+        margin-top: 0.3125rem;
+        position: relative;
+
+    }
+
+    .menuHamb.active::before {
+        transform: rotate(135deg);
+
+    }
+
+    .menuHamb.active::after {
+        top: -7px;
+        transform: rotate(-135deg);
+
+
+    }
+
+    .menuHamb.active {
+        border-top-color: transparent;
+    }
+
+    @media only screen and (max-width: 600px) {
+        .menu {
+            flex: 10%;
+            background-color: white;
+            margin-left: 0;
+            margin-right: 0;
+            margin-left: 0;
+            border-right: 2px solid rgba(165, 164, 164, 0.268);
+        }
+
+
+        .menu-contener {
+
+            display: block;
+            text-align: center;
+            margin: 0;
+            background-color: white;
+            color: gray;
+
+
+        }
+
+        .menu-contener ul {
+            padding-left: 0;
+        }
+
+        .menu-contener li {
+            display: flex;
+            list-style: none;
+            color: gray;
+            align-items: center;
+            margin: 2px;
+            border: 1px solid rgb(165, 164, 164, 0);
+            margin-inline: 10px;
+        }
+
+        .menu-contener i {
+
+            padding-left: 1rem;
+        }
+
+        .menu-contener a {
+
+
+            padding: 1rem 0;
+            align-items: center;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            color: gray;
+
+
+
+
+
+
+        }
+
+        .menu-contener span {
+           display: none;
+
+
+        }
+
+
+        .menu-contener li:hover {
+
+            background-color: var(--graymeio);
+            /* border-top-left-radius: 0.5rem; */
+            /* border-bottom-left-radius: 0.5rem; */
+            border-radius: 8px;
+            color: black;
+            /* margin-right: 1rem; */
+            /* border: 1px solid rgba(165, 164, 164, 0.268);  */
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            font-weight: 700;
+            /* margin: 0; */
+
+
+
+
+        }
+
+        .menu-contener li:hover a {
+            color: black;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            font-weight: 700;
+            margin: 0;
+
+
+        }
+
+
+        /* .menu-contener i {
+        color:#8cb3d1;
+
+      
+    } */
+
+        .menu-contener li.active {
+            background-color: var(--graymeio);
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+            /* border-right: 2px solid black; */
+            color: black;
+            /* border-bottom-left-radius: 15px; */
+            border-bottom: 1px solid rgba(165, 164, 164, 0.268);
+            border-top: 1px solid rgba(165, 164, 164, 0.268);
+            border-left: 1px solid rgba(165, 164, 164, 0.268);
+            margin-right: 0px;
+
+            box-shadow: 5px 0 var(--graymeio);
+
+
+        }
+
+        .menu-contener li.active:hover {
+
+            margin-right: 0;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 0;
+
+
+        }
+    }
+</style>
+
+
+<body>
+
+
+    <div class="topnav">
+
+        <div class="header_left">
+            <!-- <p onclick="openNav()"> -->
+
+            <!-- <i onclick="openNav()" style="font-size:24px" class="fa">  &#9776;</i> -->
+            <span class="menuHamb"></span>
+
+            <!-- </p> -->
+
+
+            <h3>PedProth</h3>
+
+
+
+        </div>
+
+        <div class="header_rigth">
+
+
+            <div class="menu_header">Empresa</div>
+
+            <div class="menu_header">Bruno.santos</div>
+            <div class="menu_header">
+
+                <i class="fa fa-user-circle-o" style="font-size:24px"></i>
+            </div>
+        </div>
+    </div>
+
+
+
+    <main class="corpo">
+
+        <nav class="menu" id="menu">
+            <div class="menu__header">
+                <i class="fa fa-ellipsis-v"></i>
+                <h5>Menu</h5>
+            </div>
+            <div class="menu-contener">
+
+
+                <ul>
+                    <li><a href="#"><i class="fa fa-handshake-o"></i> <span>Pedidos</span> </a></li>
+                    <li><a href="#"><i class="fa fa-tags"></i> <span>Services</span></a></li>
+                    <li class=" active"><a href="#"><i class="fa fa-group"></i> <span>Clientes</span></a></li>
+                    <li><a href="#"><i class="	fa fa-sign-out"></i><span>Logoff</span> </a></li>
+
+                </ul>
+
+
+
+
+            </div>
+        </nav>
+
+
+
+        <div class="meio">
+            <h3>Vertical Mobile Navbar</h3>
+            <p>This example demonstrates how a navigation menu on a mobile/smart phone could look like.</p>
+            <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+            <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+            <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+            <p>Click on the hamburger menu (three bars) in the top right corner, to toggle the menu.</p>
+
+        </div>
+        </div>
+
+
+
+
+    </main>
+
+
+
+
+</body>
+
+<script>
+    const menu = document.querySelector(".menuHamb")
+    const menulist = document.querySelector(".menu")
+    function openNav() {
+
+        menu.classList.toggle("active");
+        if (menulist.style.display == 'block') {
+            menulist.style.display = 'none';
+
+        } else {
+
+            menulist.style.display = 'block';
+        }
+
+        //    event.preventDefault();
+    }
+
+    menu.addEventListener("click", openNav)
+</script>
+
+</html>

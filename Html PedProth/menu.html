@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Menu</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='main.js'></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        :root {
+            --colorstrong: #e0e0e0;
+            --graymeio: #EEEEEE;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: var(--graymeio);
+            min-width: 532px;
+
+        }
+
+        /* Menu css */
+
+        .menu-contener {
+
+            flex: 2%;
+            height: calc(100vh - 50px);
+            background-color: white;
+            border-right: 2px solid rgba(165, 164, 164, 0.268);
+        }
+
+        .menu-contener span {
+
+            display: none;
+
+        }
+
+        .menu-contener i {
+            margin-right: 0;
+        }
+
+        .menu-contener ul {
+            display: block;
+            list-style: none;
+            align-items: center;
+            padding: 0;
+            align-self: center;
+            padding-left: 10px;
+
+        }
+
+        .menu-contener li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            color: gray;
+            margin-left: 0;
+            margin-right: 10px;
+            margin-top: 10px;
+
+
+        }
+
+        .menu-contener li:hover,
+        .menu-contener a:hover {
+
+            /* align-items: center; */
+            background-color: var(--graymeio);
+            border-radius: 0.5rem;
+            color: black;
+            margin-left: 0;
+
+
+        }
+
+
+
+        .menu-contener.toggle {
+
+            flex: 10%;
+
+
+        }
+
+        .menu-contener.toggle span {
+            justify-content: center;
+            display: block;
+
+        }
+
+        .menu-contener.toggle i {
+            margin-right: 10px;
+        }
+
+
+
+
+        /* menu aberto */
+
+        .menu-contener li.active {
+
+            background-color: var(--graymeio);
+            border-top-left-radius: 0.5rem;
+            border-bottom-left-radius: 0.5rem;
+            color: black;
+            border-bottom: 1px solid rgba(165, 164, 164, 0.268);
+            border-top: 1px solid rgba(165, 164, 164, 0.268);
+            border-left: 1px solid rgba(165, 164, 164, 0.268);
+            margin-left: 0;
+            margin-right: 0px;
+            margin-top: 10px;
+            padding-right: 10px;
+            box-shadow: 2px 0 var(--graymeio);
+
+        }
+
+
+        .menu-contener li.active:hover {
+
+            background-color: var(--graymeio);
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            color: black;
+
+        }
+
+        .menu-contener a {
+
+            display: flex;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            color: gray;
+            padding: 1rem;
+            justify-content: center;
+
+        }
+
+
+
+
+
+        /* Menu css */
+
+        /* top menu      */
+
+        .topnav {
+            width: 100%;
+            display: flex;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            justify-content: space-between;
+            color: gray;
+            align-items: center;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            background: white;
+            border-bottom: 2px solid rgba(165, 164, 164, 0.268);
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            height: 50px;
+
+
+        }
+
+        .header_left {
+            /* border: 5px solid black;  */
+            display: flex;
+            align-items: center;
+            padding-top: 0;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            text-decoration: none;
+            color: gray;
+        }
+
+
+        .header_left a {
+            /* border: 5px solid black;  */
+            text-decoration: none;
+            color: gray;
+        }
+
+        .header_left a:hover {
+            /* border: 5px solid black;  */
+            text-decoration: none;
+            color: black;
+        }
+
+        .header_rigth {
+            /* border: 5px solid black;  */
+            display: flex;
+            align-items: center;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+
+        }
+
+        .header_rigth a {
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: 400;
+            text-decoration: none;
+            color: gray;
+            padding: 0.5rem;
+
+
+
+
+        }
+
+        .header_rigth a:hover {
+
+            color: black;
+
+            /* border-bottom: 2px solid black; */
+            background-color: var(--graymeio);
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid rgba(165, 164, 164, 0.268);
+            border-bottom: 2px solid #a3a2a2;
+
+
+
+
+        }
+
+
+        .menu_header {
+            padding-left: 10px;
+            padding-right: 10px;
+            cursor: pointer;
+            font-weight: 400;
+
+
+        }
+
+
+        .header_left>p {
+            font-size: 24px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 0;
+            cursor: pointer;
+
+
+        }
+
+        .header_left>p:hover {
+            color: black;
+
+        }
+
+        .header_left>i {
+            padding-left: 10px;
+
+        }
+
+        .header_left h3 {
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: #8cb3d1;
+            font-weight: 200;
+            font-size: 25;
+            margin: 0 10px 0 10px;
+
+
+        }
+
+
+        /* top menu      */
+
+        /* menu hamb */
+
+        .menuHamb {
+
+            border-top: 0.125rem solid;
+            width: 1.25rem;
+            display: block;
+            transition: 0.8s;
+        }
+
+
+
+        .menuHamb::before,
+        .menuHamb::after {
+            content: " ";
+            display: block;
+            width: 1.25rem;
+            height: 0.125rem;
+            background: currentColor;
+            margin-top: 0.3125rem;
+            position: relative;
+            transition: 0.6s;
+
+
+
+        }
+
+        .menuHamb.active::before {
+            transform: rotate(135deg);
+
+            transition: transform 0.8s;
+
+        }
+
+        .menuHamb.active::after {
+            top: -7px;
+            transform: rotate(-135deg);
+            transition: transform 0.8s;
+
+        }
+
+        .menuHamb.active {
+            border-top-color: transparent;
+            transition: 0.6s;
+        }
+
+        .contener-main {
+            display: flex;
+            /* background-color: #8cb3d1; */
+        }
+
+        .contener-cont {
+            display: flex;
+            flex-wrap: wrap;
+            flex: 90%;
+            padding: 0.05rem;
+            margin: 0.05rem;
+            position: relative;
+
+        }
+
+        .win-card {
+
+            /* display: flex; */
+            border-radius: 8px;
+            background-color: white;
+            border: 1px solid rgba(165, 164, 164, 0.268);
+            padding: 1rem;
+            margin: 0.2rem;
+
+            /* flex-direction: column; */
+
+
+        }
+
+        .win-card::before {
+            content: attr(title-card) " ";
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: #8cb3d1;
+            font-weight: 300;
+            font-size: 30;
+            /* border-bottom: 2px solid #8cb3d1;       */
+            position: relative;
+            width: 100%;
+            display: block;
+            margin-bottom: 0.5rem;
+
+
+
+
+        }
+
+        .win-card.wfull {
+            width: 100%;
+
+        }
+
+        .win-card.w96 {
+
+            width: 96px;
+
+
+        }
+
+        .win-card.w192 {
+
+            width: 192px;
+
+
+        }
+
+        .win-card.w384 {
+
+            width: 384px;
+
+
+        }
+
+        .win-card.w768 {
+
+            width: 768px;
+
+
+        }
+
+        .mBrowser {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .mBrowser td,
+        .mBrowser th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        .mBrowser tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        .mBrowser tr:hover {
+            background-color: #8cb3d1;
+            color: white;
+        }
+
+        .mBrowser th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: gray;
+            color: white;
+        }
+
+        .pagination {
+
+            display: flex;
+            text-decoration: none;
+            list-style: none;
+            margin: 0.5rem;
+            align-items: center;
+        }
+
+        .pagination li {
+
+            padding: 0.5rem 1rem;
+            margin: 0.2rem;
+            border: 1px solid rgb(126, 106, 106, 0);
+            border-radius: 8px;
+            color: gray;
+            font-style: bold;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+
+        .pagination li:hover {
+            color: black;
+            background-color: var(--graymeio);
+
+        }
+
+        .pagination li.active {
+
+            border: 1px solid gray;
+            background-color: var(--graymeio);
+            color: gray;
+
+        }
+
+        .pagination li.active:hover {
+            color: black;
+        }
+
+        .tabs {
+
+
+            background-color: red;
+
+            margin-top: 3rem;
+            /* padding-top: 2rem; */
+            /* position: relative; */
+            /* height: auto; */
+            display: grid;
+            margin-bottom: 10px;
+
+
+
+
+
+        }
+
+
+        .tabs .item {
+            /* border-radius: 8px;
+            padding: 1rem;
+            /* margin: 0.2rem; */
+            position: relative;
+            top: 0;
+            padding: 1rem;
+            visibility: hidden;
+            pointer-events: all;
+            /* width: 100%; */
+            border: 1px solid rgba(165, 164, 164, 0.268);
+            background-color: white;
+
+            /* display: grid; */
+            /* grid-auto-columns: 50px;     */
+            /* grid-template-columns: 100px repeat(11, auto); */
+            /* grid-template-columns: repeat(auto-fit, minmax(100px,auto)); */
+            /* grid-gap: 10px; */
+            /* grid-auto-columns: auto auto auto auto; */
+            /* grid-template-rows: 15px 15px; */
+
+        }
+
+
+
+        .tabs .item.active {
+
+            visibility: visible;
+        }
+
+        .tabs .item.active:before {
+
+
+            border-bottom: 0;
+            top: -32px;
+        }
+
+
+        /* .tabs .item:before {
+            content: attr(card-title);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: #8cb3d1;
+            font-weight: 300;
+            font-size: 27;
+             border: 1px solid rgba(165, 164, 164, 0.268);
+            /* margin-bottom: 0.5rem; */
+        /* position: absolute; */
+        /* top: -33px; */
+        /* width: 100px; */
+        /* height: 15px; */
+        /* width: 80px; */
+        /* grid-area: var(--card); */
+        /* grid-auto-columns: max-content;  */
+        /* left: Calc((160px * var(--card))); */
+        /* left: Calc(-1px + (100px * var(--card))); */
+        /* left:-1px; */
+        /* visibility: visible;
+            pointer-events: all;
+            padding: 0.5rem;
+            background-color: white;
+            border-radius: 8px 8px 0 0; */
+        /* grid-column-start: var(--card); */
+
+        /* grid-area: 1 / var(--card);   */
+        /* position: absolute; */
+
+
+
+
+        /* } */
+
+        .tabs .item:hover:before {
+
+            background-color: red;
+
+        }
+
+
+
+        .tabs .select {
+
+            position: relative;
+            background-color: blue;
+            width: 100%;
+
+            border: 1px solid red;
+        }
+
+        .tabs .select ul {
+
+            display: flex;
+
+
+
+        }
+
+        .tabs .select ul li {
+            border-radius: 8px 8px 0 0;
+            border: 1px solid black;
+            padding: 15px;
+            background-color: white;
+            margin: 5px 5px 0 0;
+        }
+
+        .tabs .select ul li:hover {
+            background-color: var(--graymeio);
+
+        }
+
+
+        .tabs .items .cards {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+
+
+            background-color: white;
+            border: 1px solid black;
+
+        }
+        .tabs .items {
+            position: relative;
+            display: flex;
+            width: 100%;
+            min-height: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="topnav">
+
+        <div class="header_left">
+            <a href=""><span class="menuHamb"></span></a>
+
+            <h3>PedProth</h3>
+
+        </div>
+
+        <div class="header_rigth">
+
+
+            <a href="#">Empresa</a>
+            <a href="#">Bruno.santos</a>
+            <a href="#"><i class="fa fa-user-circle-o" style="font-size:24px"></i></a>
+
+            <!-- <div class="menu_header">Bruno.santos</div>
+            <div class="menu_header">
+
+                <i class="fa fa-user-circle-o" style="font-size:24px"></i> -->
+        </div>
+    </div>
+
+
+
+    <main class="contener-main">
+
+        <nav class="menu-contener" id="menu">
+
+            <ul>
+                <li><a href="#"><i class="fa fa-handshake-o"></i> <span>Pedidos</span> </a></li>
+                <li><a href="#"><i class="fa fa-filter"></i> <span>Services</span></a></li>
+                <li class=" active"><a href="#"><i class="fa fa-group"></i> <span>Clientes</span></a></li>
+                <li><a href="#"><i class="	fa fa-sign-out"></i><span>Logoff</span> </a></li>
+
+            </ul>
+
+        </nav>
+
+
+        <div class="contener-cont">
+            <div class="win-card wfull" title-card="Pedidos">
+
+
+                <div class="tabs">
+                    <div class="select">
+                        <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+
+                    </div>
+                    <div class="items">
+
+
+                        <div class="cards">TESTE 1</div>
+                        <div class="cards">TESTE 2</div>
+                        <div class="cards">TESTE 3</div>
+                        <div class="cards">TESTE 4</div>
+
+                    </div>
+                </div>
+
+
+
+
+                <table class="mBrowser">
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                    </tr>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Berglunds </td>
+                        <td>Christina Berglund</td>
+                        <td>Sweden</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+                    <tr>
+                        <td>Ernst Handel</td>
+                        <td>Roland Mendel</td>
+                        <td>Austria</td>
+                    </tr>
+                    <tr>
+                        <td>Island Trading</td>
+                        <td>Helen Bennett</td>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Essen</td>
+                        <td>Philip Cramer</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Laughing Bacchus Winecellars</td>
+                        <td>Yoshi Tannamuri</td>
+                        <td>Canada</td>
+                    </tr>
+                    <tr>
+                        <td>Magazzini Alimentari Riuniti</td>
+                        <td>Giovanni Rovelli</td>
+                        <td>Italy</td>
+                    </tr>
+                    <tr>
+                        <td>North/South</td>
+                        <td>Simon Crowther</td>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Paris </td>
+                        <td>Marie Bertrand</td>
+                        <td>France</td>
+                    </tr>
+                </table>
+                <ul class="pagination">
+                    <li>1</li>
+                    <li class=" active">2</li>
+                    <li>3</li>
+
+                </ul>
+            </div>
+            <div class="win-card w96" title-card="Pedidos"></div>
+            <div class="win-card w192">teste</div>
+            <div class="win-card w384">teste</div>
+            <div class="win-card w768"></div>
+
+        </div>
+
+
+    </main>
+</body>
+
+<script>
+
+    const menulist = document.querySelector(".menu-contener")
+    const menu = document.querySelector(".menuHamb")
+    const tabs = document.querySelectorAll(".tabs div")
+    function openNav() {
+
+        menulist.classList.toggle("toggle");
+        menu.classList.toggle("active");
+
+    }
+
+    function opentabs() {
+        alert("Teste");
+    }
+
+
+    menulist.addEventListener("click", openNav);
+    tabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+
+            tabs.forEach(notab => { notab.classList.remove("active"); })
+            tab.classList.add("active");
+
+
+        })
+    });
+
+</script>
+
+</html>
