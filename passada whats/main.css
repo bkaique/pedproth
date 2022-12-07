@@ -1,0 +1,181 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.tabs input {
+
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    visibility: hidden;
+}
+
+.container {
+
+    width: 340px;
+    height: 600px;
+    background-color: #fff;
+    box-shadow: 0 5px 5px rgb(0, 0, 0, 0.15);
+    overflow: hidden;
+
+
+
+}
+
+.links {
+    display: flex;
+    position: relative;
+    background-color: green;
+}
+
+.links label {
+    width: 33.33%;
+    text-align: center;
+    margin: 0.5rem;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    opacity: 0.75;
+
+}
+
+.data-prin {
+    position: relative;
+    width: calc(340px * 3);
+    display: flex;
+    transition: 0.5s;
+    height: 100%;
+
+}
+
+.tabs input:nth-child(1):checked~.links label:nth-child(1) {
+
+    opacity: 1;
+}
+
+.tabs input:nth-child(1)~.links label {
+
+    opacity: 0.75;
+}
+
+.tabs input:nth-child(2):checked~.links label:nth-child(2) {
+
+    opacity: 1;
+}
+
+.tabs input:nth-child(3):checked~.links label:nth-child(3) {
+
+    opacity: 1;
+}
+
+.data-prin .box {
+
+    position: relative;
+    width: 340px;
+    background-color: antiquewhite;
+}
+
+.tabs input:nth-child(1):checked~.data-prin {
+
+    left: calc(340px * 0);
+
+}
+
+.tabs input:nth-child(2):checked~.data-prin {
+
+    left: calc(340px * -1);
+
+}
+
+.tabs input:nth-child(3):checked~.data-prin {
+
+    left: calc(340px * -2);
+}
+
+.data-prin .box .data {
+    position: relative;
+    width: 100%;
+    height: 510px;
+
+
+}
+
+.data-prin .box .data .chatlist {
+
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border: 1px solid red;
+
+}
+
+.data-prin .box .data .chatlist .block {
+    display: flex;
+    background-color: #fff;
+    width: 100%;
+    padding: 15px 10px;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid black;
+
+
+}
+
+.data-prin .box .data .chatlist .block:hover {
+    background-color: antiquewhite;
+
+}
+
+.data-prin .box .data .chatlist .block .imgcover {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    border-radius: 50%;
+
+
+
+
+}
+
+.data-prin .box .data .chatlist .block .imgcover img {
+    position: relative;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.data-prin .box .data .chatlist .block .detalis {
+    position: relative;
+    width: 100%;
+}
+
+.data-prin .box .data .chatlist .block .detalis .header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.data-prin .box .data .chatlist .block .detalis .header .time {
+    opacity: 0.75;
+
+
+}
+
+.data-prin .box .data .chatlist .block .detalis .msg_p {
+    display: flex;
+    justify-content: space-between;
+}
